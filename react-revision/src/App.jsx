@@ -50,16 +50,27 @@
 // export default App;
 
 
+// import User from "./User";
+
+// function App() {
+//   return (
+//     <div>
+//       <User name="Kajal" age={20} />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import User from "./User";
 
 function App() {
   return (
-    <div>
-      <User name="Kajal" age={20} />
-    </div>
-  );
+    <>
+    <User branch="CSE" section="C"/>
+    </>
+  )
 }
-
 export default App;
 
 

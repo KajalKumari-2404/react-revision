@@ -62,16 +62,63 @@
 
 // export default App;
 
+// import User from "./User";
+
+// function App() {
+//   return (
+//     <>
+//     <User branch="CSE" section="C"/>
+//     </>
+//   )
+// }
+// export default App;
+
+//props example 2
+
+// import User from "./User";
+
+// function App() {
+//   return (
+//     <div>
+//       <h1>User Details</h1>
+
+//       <User
+//         name="Kajal"
+//         age={20}
+//         city="Bhopal"
+//       />
+
+//       <User
+//         name="Aayushi"
+//         age={22}
+//         city="Indore"
+//       />
+
+//       <User
+//         name="Disha"
+//         age={21}
+//         city="Delhi"
+//       />
+//     </div>
+//   );
+// }
+
+// export default App;
+
 import User from "./User";
 
 function App() {
   return (
     <>
-    <User branch="CSE" section="C"/>
+    <h1>User Details</h1>
+    <User name="Kajal" age={20} city="Bhopal" stream="PCM" />
+    <User name="Ayushi" age={22} city="Indore" stream="PCB" />
+    <User name="Bhavika" age={19} city="Delhi" stream="PCMB" />
     </>
   )
 }
-export default App;
+
+export default App
 
 
 

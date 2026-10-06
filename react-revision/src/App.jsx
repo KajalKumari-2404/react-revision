@@ -105,20 +105,57 @@
 
 // export default App;
 
-import User from "./User";
+// import User from "./User";
+
+// function App() {
+//   return (
+//     <>
+//     <h1>User Details</h1>
+//     <User name="Kajal" age={20} city="Bhopal" stream="PCM" />
+//     <User name="Ayushi" age={22} city="Indore" stream="PCB" />
+//     <User name="Bhavika" age={19} city="Delhi" stream="PCMB" />
+//     </>
+//   )
+// }
+
+// export default App
+
+// useState
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+
+  const decrease = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    }
+  };
+
   return (
-    <>
-    <h1>User Details</h1>
-    <User name="Kajal" age={20} city="Bhopal" stream="PCM" />
-    <User name="Ayushi" age={22} city="Indore" stream="PCB" />
-    <User name="Bhavika" age={19} city="Delhi" stream="PCMB" />
-    </>
-  )
+    <div>
+      <h1>Counter: {count}</h1>
+
+      {/* <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+      <br />
+      <button onClick={() => setCount(count - 1)}>
+        Decrease
+      </button> */}
+
+      <button onClick={increase}>Increase</button>
+      <br />
+      <button onClick={decrease}>Decrease</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
 
 
 

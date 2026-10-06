@@ -38,15 +38,16 @@
 
 // export default User;
 
-function User(props) {
-  return (
-    <>
-    <h2>Name: {props.name}</h2>
-    <p>Age: {props.age}</p>
-    <p>City: {props.city}</p>
-    <p>Stream: {props.stream}</p>
-    </>
-  )
-}
+//example with distructuring
+// function User({name, age, city, stream}) {
+//   return (
+//     <>
+//     <h2>Name: {name}</h2>
+//     <p>Age: {age}</p>
+//     <p>City: {city}</p>
+//     <p>Stream: {stream}</p>
+//     </>
+//   )
+// }
 
-export default User
+// export default User;

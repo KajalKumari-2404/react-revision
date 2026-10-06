@@ -16,20 +16,38 @@
 
 // export default Welcome;
 
-const name = "Kajal";
-const age = "20"
+// const name = "Kajal";
+// const age = "20"
+
+// function App() {
+//   return (
+//     <>
+//     <h1>Hello {name}</h1>
+//     <h1>Age: {age}</h1>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+import Navbar from "./Navbar";
+import Home from "./Home";
+import About from "./About";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <>
-    <h1>Hello {name}</h1>
-    <h1>Age: {age}</h1>
-    </>
+    <div>
+      <Navbar />
+      <Home />
+      <About />
+      <Footer />
+    </div>
   );
 }
 
 export default App;
-
 
 
 

@@ -160,27 +160,115 @@
 
 
 //useState + Input
+// import { useState } from "react";
+
+// function App() {
+//   const [name, setName] = useState("");
+
+//   return (
+//     <div>
+//       <h1>My Name: {name}</h1>
+
+//       <input
+//         type="text"
+//         placeholder="Enter your name"
+//         value={name}
+//         onChange={(e) => setName(e.target.value)}
+//       />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+// usestate name+age
+
+// import { useState } from "react";
+
+// function App() {
+//   const [name, setName] = useState("");
+//   const [age, setAge] = useState("");
+
+//   return (
+//     <div>
+//       <h1>Name: {name}</h1>
+//       <h2>Age: {age}</h2>
+
+//       <input
+//         type="text"
+//         placeholder="Enter your name"
+//         value={name}
+//         onChange={(e) => setName(e.target.value)}
+//       />
+
+//       <br />
+
+//       <input
+//         type="number"
+//         placeholder="Enter your age"
+//         value={age}
+//         onChange={(e) => setAge(e.target.value)}
+//       />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
 import { useState } from "react";
 
 function App() {
-  const [name, setName] = useState("");
+  const [user, setUser] = useState({
+    name: "",
+    age: "",
+    city: ""
+  });
 
   return (
     <div>
-      <h1>My Name: {name}</h1>
+      <h1>User Details</h1>
 
       <input
         type="text"
-        placeholder="Enter your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter name"
+        value={user.name}
+        onChange={(e) =>
+          setUser({ ...user, name: e.target.value })
+        }
       />
+
+      <br /><br />
+
+      <input
+        type="number"
+        placeholder="Enter age"
+        value={user.age}
+        onChange={(e) =>
+          setUser({ ...user, age: e.target.value })
+        }
+      />
+
+      <br /><br />
+
+      <input
+        type="text"
+        placeholder="Enter city"
+        value={user.city}
+        onChange={(e) =>
+          setUser({ ...user, city: e.target.value })
+        }
+      />
+
+      <h2>Name: {user.name}</h2>
+      <h2>Age: {user.age}</h2>
+      <h2>City: {user.city}</h2>
     </div>
   );
 }
 
 export default App;
-
 
 
 

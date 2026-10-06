@@ -121,42 +121,65 @@
 // export default App
 
 // useState
+// import { useState } from "react";
+
+// function App() {
+//   const [count, setCount] = useState(0);
+
+//   const increase = () => {
+//     setCount(count + 1);
+//   };
+
+//   const decrease = () => {
+//     if (count > 0) {
+//       setCount(count - 1);
+//     }
+//   };
+
+//   return (
+//     <div>
+//       <h1>Counter: {count}</h1>
+
+//       {/* <button onClick={() => setCount(count + 1)}>
+//         Increase
+//       </button>
+//       <br />
+//       <button onClick={() => setCount(count - 1)}>
+//         Decrease
+//       </button> */}
+
+//       <button onClick={increase}>Increase</button>
+//       <br />
+//       <button onClick={decrease}>Decrease</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+//useState + Input
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const increase = () => {
-    setCount(count + 1);
-  };
-
-  const decrease = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
+  const [name, setName] = useState("");
 
   return (
     <div>
-      <h1>Counter: {count}</h1>
+      <h1>My Name: {name}</h1>
 
-      {/* <button onClick={() => setCount(count + 1)}>
-        Increase
-      </button>
-      <br />
-      <button onClick={() => setCount(count - 1)}>
-        Decrease
-      </button> */}
-
-      <button onClick={increase}>Increase</button>
-      <br />
-      <button onClick={decrease}>Decrease</button>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
     </div>
   );
 }
 
 export default App;
-
 
 
 

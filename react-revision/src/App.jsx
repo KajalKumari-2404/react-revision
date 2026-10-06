@@ -31,23 +31,38 @@
 // export default App;
 
 
-import Navbar from "./Navbar";
-import Home from "./Home";
-import About from "./About";
-import Footer from "./Footer";
+// import Navbar from "./Navbar";
+// import Home from "./Home";
+// import About from "./About";
+// import Footer from "./Footer";
+
+// function App() {
+//   return (
+//     <div>
+//       <Navbar />
+//       <Home />
+//       <About />
+//       <Footer />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import User from "./User";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Footer />
+      <User name="Kajal" age={20} />
     </div>
   );
 }
 
 export default App;
+
+
 
 
 

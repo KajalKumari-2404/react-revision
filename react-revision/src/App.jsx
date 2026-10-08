@@ -335,71 +335,94 @@
 // export default App;
 
 //Array State — Remove User
-import { useState } from "react";
+// import { useState } from "react";
+
+// function App() {
+//   const [users, setUsers] = useState([]);
+//   const [name, setName] = useState("");
+
+//   const addUser = () => {
+//     setUsers([...users, name]);
+//     setName("");
+//     //input box ko empty karne ke liye 
+//   };
+
+//   const removeUser = (indexToRemove) => {
+//     const updatedUsers = users.filter(
+//       //filter() Array me se condition ke according items select karke ek new array banana.
+//       (user, index) => index !== indexToRemove
+//     );
+
+//     setUsers(updatedUsers);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Users List</h1>
+
+//       <input
+//         type="text"
+//         placeholder="Enter user name"
+//         value={name}
+//         onChange={(e) => setName(e.target.value)}
+//       />
+
+//       <button onClick={addUser}>Add User</button>
+
+//       {users.map((user, index) => (
+//         <div key={index}>
+//           <p>{user}</p>
+
+//           <button onClick={() => removeUser(index)}>
+//             Remove
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
+      
+
+//lazy loading
+// import { lazy, Suspense } from "react";
+
+// const Dashboard = lazy(() => import("./Dashboard"));
+
+// function App() {
+//   return (
+//     <Suspense fallback={<h2>Loading...</h2>}>
+//       <Dashboard />
+//     </Suspense>
+//   );
+// }
+
+// export default App;
+
+import { lazy, Suspense } from "react";
+
+const Dashboard = lazy(() => {
+  console.log("Dashboard loading started...");
+
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Dashboard loaded!");
+      resolve(import("./Dashboard"));
+    }, 3000);
+  });
+});
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [name, setName] = useState("");
-
-  const addUser = () => {
-    setUsers([...users, name]);
-    setName("");
-    //input box ko empty karne ke liye 
-  };
-
-  const removeUser = (indexToRemove) => {
-    const updatedUsers = users.filter(
-      //filter() Array me se condition ke according items select karke ek new array banana.
-      (user, index) => index !== indexToRemove
-    );
-
-    setUsers(updatedUsers);
-  };
-
   return (
     <div>
-      <h1>Users List</h1>
+      <h1>My React App</h1>
 
-      <input
-        type="text"
-        placeholder="Enter user name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-
-      <button onClick={addUser}>Add User</button>
-
-      {users.map((user, index) => (
-        <div key={index}>
-          <p>{user}</p>
-
-          <button onClick={() => removeUser(index)}>
-            Remove
-          </button>
-        </div>
-      ))}
+      <Suspense fallback={<h2>⏳ Loading Dashboard...</h2>}>
+        <Dashboard />
+      </Suspense>
     </div>
   );
 }
 
 export default App;
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

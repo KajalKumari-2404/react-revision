@@ -423,6 +423,6 @@ function App() {
       </Suspense>
     </div>
   );
-}
+};
 
 export default App;
